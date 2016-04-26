@@ -602,6 +602,8 @@ function loadPath() {
     gamePath = JSON.parse(localStorage.getItem('storyPath'));
     console.log(gamePath);
 
+    var lastID = null;
+
     // Iterate through all previously made paths
     $.each(gamePath, function(index, pathValue) {
         if (pathValue.indexOf(':') != -1) {
@@ -612,7 +614,15 @@ function loadPath() {
             var id = pathValue;
         }
         addData(id, false, choice);
+
+        lastID = id;
     });
+
+    var lastData = getData(lastID);
+
+    if (lastData.type == 'message') {
+      changePage(lastData.target);
+    }
 
     scrollToBottom();
 }
