@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Rock+Salt|Coming+Soon|Architects+Daughter);
+/*
+font-family: 'Rock Salt', cursive;
+font-family: 'Coming Soon', cursive;
+font-family: 'Architects Daughter', cursive;
+*/
+
+
+/*
+Needed for the centering of content and ensuring no browser whitespace is added.
+*/
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+
+
+body {
+  background-color: #111111;
+  font-family: 'Coming Soon', cursive;
+  color: #BBBBBB;
+  font-size: 18px;
+}
+
+
+
+/*
+Places background image on screen with styling effects. This code is used to
+ensure none of the later specified filters alter the main content of the
+landing page.
+*/
+
+.content:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -999;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /*
+  Uses the background image stored within the images folder and makes it
+  cover the screen.
+  */
+  background-image: url("../images/titlebg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+
+  /* Need to specify CSS3 filter properties for all browsers */
+  -webkit-filter: blur(5px) brightness(30%);
+  -moz-filter: blur(5px) brightness(30%);
+  -o-filter: blur(5px) brightness(30%);
+  -ms-filter: blur(5px) brightness(30%);
+  filter: blur(5px) brightness(30%);
+
+  /* Adds a darker edge around the background */
+  box-shadow: inset 0 0 200px 0 #000000;
+}
+
+
+
+/* Center content */
+.content {
+  margin: 0 auto;
+  width: 800px;
+  padding: 20px;
+}
+
+/* Contain the following class in the middle and fix to middle point of screen*/
+.darkbg-container {
+  position: fixed;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+}
+
+/* Move back right to where required and create the dark background */
+.darkbg {
+  position: relative;
+  left: -50%;
+  width: 800px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+h1 {
+  font-family: 'Rock Salt', cursive;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #866418;
+}
+
+a:hover {
+  color: #ba8b21;
+}
+
+a:active, a:focus {
+  color: #866418;
+}

@@ -1,0 +1,75 @@
+h2 {
+  font-size: 1.2em;
+}
+
+/*
+Container is used to center the jumbotron vertically and horizontally using
+CSS3 properties.
+*/
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron {
+    width: 700px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #03141c;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.begin-button {
+  font-size: 1.5em;
+
+  display: block;
+  margin: 30px auto;
+
+  width: 500px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 3px solid #322a1a;
+  border-radius: 20px;
+}
+
+.begin-button:hover {
+  border: 3px solid #6b5012;
+}
+
+.reset-button {
+  cursor: pointer;
+}
+
+.reset-button-hidden {
+  cursor: default;
+}
+
+.hide {
+  display: none;
+}
+
+.reset-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 30px 40px;
+}

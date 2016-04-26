@@ -1,0 +1,108 @@
+/*
+Force a scroll bar for later no page adjustment when lots of content becomes
+visible. Also ensure the darkbg left adjustments don't create x scroll bars.
+*/
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Define a static width and add some spacing */
+article {
+  width: 760px;
+  margin: 0 20px 20px 20px;
+  background-image: url("../images/paper.png");
+}
+
+/* Add padding and increase base font size */
+.message, .status, .choice, .end {
+  color: #222222;
+  font-size: 1.4em;
+  padding: 20px 20px;
+}
+
+/* Center text for items other than messages */
+.load, .status, .choice, .end {
+  text-align: center;
+}
+
+
+.choice {
+  display: table;
+  border-spacing: 20px 0;
+  padding: 20px 0; /* Overrule previous padding because we're using table spacing */
+}
+
+.choice a {
+  border: 4px solid #222222;
+  display: inline-block;
+  width: 340px;
+  color: #222222;
+  cursor: pointer; /* Make this appear as a link by using the cursor */
+  height: 100px;
+
+
+  /* Center the text vertically */
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.choice a:hover {
+  color: #533712;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Slightly gray out the option not chosen */
+.choice-no {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Disable input on the button */
+.chosen a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.end a, .end a:link {
+  color: #5b0101;
+  font-size: 1.5em;
+}
+
+.end a:hover, .end a:active, .end a:focus {
+  color: #8b3a3a;
+  font-size: 1.5em;
+}
+
+.dots {
+  -webkit-animation: ellipsis 2s infinite;
+  -moz-animation: ellipsis 2s infinite;
+  animation: ellipsis 2s infinite;
+  width: 0px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1em;
+  }
+}
+
+@-moz-keyframes ellipsis {
+  to {
+    width: 1em;
+  }
+}
+
+
+
+audio {
+  display: none;
+}
