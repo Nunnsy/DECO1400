@@ -77,10 +77,18 @@ article {
 .dots {
   -webkit-animation: ellipsis 2s infinite;
   -moz-animation: ellipsis 2s infinite;
+  -o-animation: ellipsis 2s infinite;
   animation: ellipsis 2s infinite;
   width: 0px;
   overflow: hidden;
   display: inline-block;
+}
+
+.home-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 30px 40px;
 }
 
 @keyframes ellipsis {
@@ -101,7 +109,11 @@ article {
   }
 }
 
-
+@-o-keyframes ellipsis {
+  to {
+    width: 1em;
+  }
+}
 
 audio {
   display: none;
