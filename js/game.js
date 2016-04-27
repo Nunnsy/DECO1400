@@ -310,60 +310,6 @@ var GAME_DATA_JSON = [
     }
 ];
 
-var GAME_DATA_JSON_template = [{
-        'id': -1,
-        'type': 'end'
-    }, {
-        'id': 0,
-        'type': 'message',
-        'message': 'This is the first message ever!',
-        'target': 1
-    },
-
-    {
-        'id': 1,
-        'type': 'choice',
-        'choice': [{
-            'text': 'This is decision 1',
-            'target': 11
-        }, {
-            'text': 'This is decision 2',
-            'target': 2
-        }]
-    },
-
-    {
-        'id': 11,
-        'type': 'message',
-        'message': 'Another message!',
-        'target': 2
-    },
-
-    {
-        'id': 2,
-        'type': 'message',
-        'message': 'Another message! 2',
-        'target': 21
-    },
-
-    {
-        'id': 21,
-        'type': 'status',
-        'text': 'Brian is busy...',
-        'unlock': 1,
-        'target': 22
-    },
-
-    {
-        'id': 22,
-        'type': 'status',
-        'text': 'Brian is sort of busy...',
-        'unlock': 1,
-        'target': -1
-    }
-];
-
-
 // The parent method in adding the next article
 function changePage(id, choiceNumber) {
     // Add last page change to story path
