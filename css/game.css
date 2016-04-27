@@ -10,7 +10,7 @@ body {
 /* Define a static width and add some spacing */
 article {
   width: 760px;
-  margin: 0 20px 20px 20px;
+  margin: 0 0 20px 0;
   background-image: url("../images/paper.png");
 }
 
