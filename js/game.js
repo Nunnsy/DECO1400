@@ -440,7 +440,7 @@ function addMessage(data, liveData) {
             changePage(data.target);
 
             scrollToBottom();
-        }, 100 * data.message.length + 200);
+        }, 50 * data.message.length + 100);
     } else {
         $('.content').append('\
     <article class="animated fadeIn">\
