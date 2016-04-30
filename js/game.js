@@ -155,6 +155,14 @@ var GAME_DATA_JSON = [
         'id': 'TryGetUp',
         'type': 'message',
         'message': 'Okay, here goes...',
+        'target': 'FirstGetUp'
+    },
+
+    {
+        'id': 'FirstGetUp',
+        'type': 'status',
+        'text': 'Brian is busy...',
+        'unlock': 10,
         'target': 'GetUpFailed'
     },
 
@@ -305,7 +313,7 @@ var GAME_DATA_JSON = [
         'id': 'TryGetUpForMinute',
         'type': 'status',
         'text': 'Brian is busy...',
-        'unlock': 1,
+        'unlock': 20,
         'target': 000000000000000000000000000000
     }
 ];
@@ -374,14 +382,16 @@ function getData(id) {
 function continueStory() {
     localStorage.removeItem('storyUnlock');
 
-    var lastStatus = parseInt(gamePath[gamePath.length - 1]);
+    var lastStatus = gamePath[gamePath.length - 1];
     changePage(getData(lastStatus).target);
 }
 
-function lockStory(minutes) {
+function lockStory(seconds) {
     var unlockDate = getCurrentDate();
     console.log(unlockDate);
-    unlockDate.setMinutes(unlockDate.getMinutes() + parseInt(minutes));
+
+    // Use the seconds given to the function to set a new date object.
+    unlockDate.setSeconds(unlockDate.getSeconds() + parseInt(seconds));
     console.log(unlockDate);
 
     localStorage.setItem('storyUnlock', unlockDate);
