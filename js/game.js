@@ -374,7 +374,7 @@ var GAME_DATA_JSON = [
     {
         'id': 'AfraidOfSun',
         'type': 'message',
-        'message': 'Yes. Seems they\'ve gone now. Afriad of the sun?',
+        'message': 'Yes. Seems they\'ve gone now. Afraid of the sun?',
         'target': 'MaybeVampires'
     },
 
