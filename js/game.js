@@ -367,7 +367,7 @@ var GAME_DATA_JSON = [
             'target': 'AfraidOfSun'
         }, {
             'text': 'What can you see?',
-            'target': 000000000000000000000000000000000000000
+            'target': 'WellSandyRidge'
         }]
     },
 
@@ -382,19 +382,26 @@ var GAME_DATA_JSON = [
         'id': 'MaybeVampires',
         'type': 'message',
         'message': 'Maybe they\'re vampires...',
-        'target': 'MaybeVampires'
+        'target': 'DelusionalOrNoDoubt'
     },
 
     {
-        'id': 'SoundsTerribleWhatCanYouSee',
+        'id': 'DelusionalOrNoDoubt',
         'type': 'choice',
         'choice': [{
-            'text': 'Did\'nt we say delusional before?',
+            'text': 'Does \'delusional\' ring a bell?',
             'target': 000000000000000000000000000000000000000
         }, {
             'text': 'No doubt!',
             'target': 000000000000000000000000000000000000000
         }]
+    },
+
+    {
+        'id': 'WellSandyRidge',
+        'type': 'message',
+        'message': 'Well, there seems to be a sandy looking ridge...',
+        'target': 000000000000000000000000000000
     }
 ];
 
