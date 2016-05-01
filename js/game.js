@@ -263,8 +263,15 @@ var GAME_DATA_JSON = [
             'target': 'ExplainWhatHappened10'
         }, {
             'text': 'Okay, okay, I get it. Now get up!',
-            'target': 'KeepTryingToGetUp'
+            'target': 'GetUpStrength'
         }]
+    },
+
+    {
+        'id': 'GetUpStrength',
+        'type': 'message',
+        'message': 'Good idea - let\'s hope I have a little more strength...',
+        'target': 'TryGetUpForMinute'
     },
 
     {
@@ -313,8 +320,55 @@ var GAME_DATA_JSON = [
         'id': 'TryGetUpForMinute',
         'type': 'status',
         'text': 'Brian is busy...',
-        'unlock': 20,
-        'target': 000000000000000000000000000000
+        'unlock': 60,
+        'target': 'OkayIAmUp'
+    },
+
+    {
+        'id': 'OkayIAmUp',
+        'type': 'message',
+        'message': 'Alright, I\'m up.',
+        'target': 'UpBarely'
+    },
+
+    {
+        'id': 'UpBarely',
+        'type': 'message',
+        'message': 'Barely.',
+        'target': 'MosquitoesAreAggressive'
+    },
+
+    {
+        'id': 'MosquitoesAreAggressive',
+        'type': 'message',
+        'message': 'You know, mosquitoes are a lot more aggressive out here.',
+        'target': 'FeastOnEyes'
+    },
+
+    {
+        'id': 'FeastOnEyes',
+        'type': 'message',
+        'message': 'They seemed to feast on my eyes.',
+        'target': 'RealFun'
+    },
+
+    {
+        'id': 'RealFun',
+        'type': 'message',
+        'message': 'Real fun.',
+        'target': 'SoundsTerribleWhatCanYouSee'
+    },
+
+    {
+        'id': 'SoundsTerribleWhatCanYouSee',
+        'type': 'choice',
+        'choice': [{
+            'text': 'Sounds Terrible...',
+            'target': 'ExplainWhatHappened10'
+        }, {
+            'text': 'What can you see?',
+            'target': 'GetUpStrength'
+        }]
     }
 ];
 
