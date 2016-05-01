@@ -364,10 +364,36 @@ var GAME_DATA_JSON = [
         'type': 'choice',
         'choice': [{
             'text': 'Sounds Terrible...',
-            'target': 'ExplainWhatHappened10'
+            'target': 'AfraidOfSun'
         }, {
             'text': 'What can you see?',
-            'target': 'GetUpStrength'
+            'target': 000000000000000000000000000000000000000
+        }]
+    },
+
+    {
+        'id': 'AfraidOfSun',
+        'type': 'message',
+        'message': 'Yes. Seems they\'ve gone now. Afriad of the sun?',
+        'target': 'MaybeVampires'
+    },
+
+    {
+        'id': 'MaybeVampires',
+        'type': 'message',
+        'message': 'Maybe they\'re vampires...',
+        'target': 'MaybeVampires'
+    },
+
+    {
+        'id': 'SoundsTerribleWhatCanYouSee',
+        'type': 'choice',
+        'choice': [{
+            'text': 'Did\'nt we say delusional before?',
+            'target': 000000000000000000000000000000000000000
+        }, {
+            'text': 'No doubt!',
+            'target': 000000000000000000000000000000000000000
         }]
     }
 ];
