@@ -447,6 +447,350 @@ var GAME_DATA_JSON = [
         "id": "WellSandyRidge",
         "type": "message",
         "message": "Well, there seems to be a sandy looking ridge...",
-        "target": 000000000000000000000000000000
+        "target": "AllSoGreen"
+    },
+
+    {
+        "id": "AllSoGreen",
+        "type": "message",
+        "message": "And it's all so green!",
+        "target": "MostlyEvergreens"
+    },
+
+    {
+        "id": "MostlyEvergreens",
+        "type": "message",
+        "message": "Trees... Pines and spruce I think? Lots of bush as well...",
+        "target": "EnoughAdmiration"
+    },
+
+    {
+        "id": "EnoughAdmiration",
+        "type": "message",
+        "message": "Enough of the admiration of nature.",
+        "target": "HelpOrSupplies"
+    },
+
+    {
+        "id": "HelpOrSupplies",
+        "type": "message",
+        "message": "What should I do, call for help of find some supplies?",
+        "target": "CallForHelpOrFindSupplies"
+    },
+
+    {
+        "id": "CallForHelpOrFindSupplies",
+        "type": "choice",
+        "choice": [{
+            "text": "Call for help.",
+            "target": "CallForHelp"
+        }, {
+            "text": "Find supplies.",
+            "target": "FindSupplies"
+        }]
+    },
+
+    {
+        "id": "CallForHelp",
+        "type": "message",
+        "message": "If you say so...",
+        "target": "CallingForHelp"
+    },
+
+    {
+        "id": "CallingForHelp",
+        "type": "status",
+        "text": "Brian calls for help...",
+        "unlock": 120,
+        "target": "NoLuckCalling"
+    },
+
+    {
+        "id": "NoLuckCalling",
+        "type": "message",
+        "message": "No luck. I think that was anything but encouraging.",
+        "target": "SunlightCommodity"
+    },
+
+    {
+        "id": "SunlightCommodity",
+        "type": "message",
+        "message": "I think sunlight is going a small commodity soon too...",
+        "target": 0000000000000000000000000000000000000000000
+    },
+
+    {
+        "id": "FindSupplies",
+        "type": "message",
+        "message": "I agree. Good idea. But where? What do I get?",
+        "target": "WhereForSupplies"
+    },
+
+    {
+        "id": "WhereForSupplies",
+        "type": "choice",
+        "choice": [{
+            "text": "Food? Fruit? Meat?",
+            "target": "FoodOverFlint"
+        }, {
+            "text": "Wood? Flint?",
+            "target": "FlintOverFood"
+        }]
+    },
+
+    {
+        "id": "FoodOverFlint",
+        "type": "message",
+        "message": "I might see if there's berries around here...",
+        "target": "MagicalBerries"
+    },
+
+    {
+        "id": "MagicalBerries",
+        "type": "message",
+        "message": "There's always magical berries in a forest.",
+        "target": "SearchForBerries"
+    },
+
+    {
+        "id": "SearchForBerries",
+        "type": "status",
+        "text": "Brian searches for berries...",
+        "unlock": 90,
+        "target": 0000000000000000000000000000000000000000000000000
+    },
+
+    {
+        "id": "FlintOverFood",
+        "type": "message",
+        "message": "Right! Where do you find flint?",
+        "target": "ShaleRockOrNotSure"
+    },
+
+    {
+        "id": "ShaleRockOrNotSure",
+        "type": "choice",
+        "choice": [{
+            "text": "Look for shale rock.",
+            "target": "ShaleRockGotIt"
+        }, {
+            "text": "I'm not really sure...",
+            "target": "YouAreUseful"
+        }]
+    },
+
+    {
+        "id": "ShaleRockGotIt",
+        "type": "message",
+        "message": "Shale rock. Got it.",
+        "target": "LookForShaleRock"
+    },
+
+    {
+        "id": "LookForShaleRock",
+        "type": "message",
+        "message": "Brian searches for shale rock...",
+        "target": 000000000000000000000000000000000000000000000000000
+    },
+
+    {
+        "id": "YouAreUseful",
+        "type": "message",
+        "message": "Well you're useful.",
+        "target": "LookForShaleRock"
+    },
+
+    {
+        "id": "ShaleRockOrNotSure",
+        "type": "choice",
+        "choice": [{
+            "text": "Is there something else you can use?",
+            "target": "NothingToUse"
+        }, {
+            "text": "Maybe look for food instead?",
+            "target": "FoodIThinkYouShould"
+        }]
+    },
+
+    {
+        "id": "FoodIThinkYouShould",
+        "type": "message",
+        "message": "If you think I should...",
+        "target": "FoodOverFlint"
+    },
+
+    {
+        "id": "NothingToUse",
+        "type": "message",
+        "message": "I have nothing to use.",
+        "target": "ThinkOrLook"
+    },
+
+    {
+        "id": "ThinkOrLook",
+        "type": "choice",
+        "choice": [{
+            "text": "Think about it for a second!",
+            "target": "ThinkForASecond"
+        }, {
+            "text": "Look around again.",
+            "target": "LookAroundAgain"
+        }]
+    },
+
+    {
+        "id": "ThinkForASecond",
+        "type": "message",
+        "message": "The hatchet. Of course the hatchet!",
+        "target": "FindSomeTinder"
+    },
+
+    {
+        "id": "LookAroundAgain",
+        "type": "message",
+        "message": "Yeah you're right. I'm stupid...",
+        "target": "ThinkForASecond"
+    },
+
+    {
+        "id": "FindSomeTinder",
+        "type": "message",
+        "message": "So... Do I find some tinder?",
+        "target": "ThinkOrLook"
+    },
+
+    {
+        "id": "ThinkOrLook",
+        "type": "choice",
+        "choice": [{
+            "text": "Gather tinder.",
+            "target": "GatherTinder"
+        }, {
+            "text": "That might not work...",
+            "target": "MightNotWork"
+        }]
+    },
+
+    {
+        "id": "GatherTinder",
+        "type": "message",
+        "message": "Alright, I'll try find some now...",
+        "target": "SearchForTinder"
+    },
+
+    {
+        "id": "SearchForTinder",
+        "type": "status",
+        "text": "Brian searches for tinder...",
+        "unlock": 90,
+        "target": 0000000000000000000000000000000000000000000000000
+    },
+
+    {
+        "id": "MightNotWork",
+        "type": "message",
+        "message": "Oh, why's that?",
+        "target": "ThinkOrLook"
+    },
+
+    {
+        "id": "ThinkOrLook",
+        "type": "choice",
+        "choice": [{
+            "text": "Nevermind. Just go find it.",
+            "target": "GatherTinder"
+        }, {
+            "text": "It might be too wet.",
+            "target": "MightBeTooWet"
+        }]
+    },
+
+    {
+        "id": "MightBeTooWet",
+        "type": "message",
+        "message": "Too wet?",
+        "target": "OhTooWet"
+    },
+
+    {
+        "id": "OhTooWet",
+        "type": "message",
+        "message": "Oh, it might not burn...",
+        "target": "FindDeadWood"
+    },
+
+    {
+        "id": "FindDeadWood",
+        "type": "message",
+        "message": "I'll try find some dead wood then?",
+        "target": "DeadWoodOrAndStone"
+    },
+
+    {
+        "id": "DeadWoodOrAndStone",
+        "type": "choice",
+        "choice": [{
+            "text": "Sounds like a plan.",
+            "target": "GetDeadWood"
+        }, {
+            "text": "Grab some stone too!",
+            "target": "FindWoodAndStone"
+        }]
+    },
+
+    {
+        "id": "GetDeadWood",
+        "type": "message",
+        "message": "Okay dead wood in lush forest, this'll be cake...",
+        "target": "MmmCake"
+    },
+
+    {
+        "id": "MmmCake",
+        "type": "message",
+        "message": "Mmm... Cake...",
+        "target": "FindSomeDeadWood"
+    },
+
+    {
+        "id": "FindSomeDeadWood",
+        "type": "status",
+        "text": "Brian searches for dead wood...",
+        "unlock": 90,
+        "target": 0000000000000000000000000000000000000000000000000
+    },
+
+    {
+        "id": "FindWoodAndStone",
+        "type": "message",
+        "message": "Some stone?",
+        "target": "SparksOrWood"
+    },
+
+    {
+        "id": "SparksOrWood",
+        "type": "choice",
+        "choice": [{
+            "text": "Stone + Hatchet = ?",
+            "target": "SparksYes"
+        }, {
+            "text": "Nevermind, just find wood.",
+            "target": "GetDeadWood"
+        }]
+    },
+
+    {
+        "id": "SparksYes",
+        "type": "message",
+        "message": "Sparks! Of course! I'll get right on that.",
+        "target": "SearchForWoodAndStone"
+    },
+
+    {
+        "id": "SearchForWoodAndStone",
+        "type": "status",
+        "text": "Brian searches for dead wood and stone...",
+        "unlock": 90,
+        "target": 0000000000000000000000000000000000000000000000000
     }
 ];
