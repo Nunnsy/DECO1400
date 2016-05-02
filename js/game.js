@@ -4,7 +4,7 @@ var gamePath = [];
 var GAME_DATA_JSON = {};
 $.getJSON('js/gamedata.json', function(data) {
     GAME_DATA_JSON = data;
-    console.log(GAME_DATA_JSON);
+    console.log(GAME_DATA_JSON.id);
 });
 
 
