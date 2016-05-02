@@ -1,12 +1,7 @@
 var gamePath = [];
 
 // Types of data: message, decision, status(unlock is in minutes)
-var GAME_DATA_JSON = {};
-$.getJSON('js/gamedata.json', function(data) {
-    GAME_DATA_JSON = data;
-    console.log(GAME_DATA_JSON.id);
-});
-
+// var GAME_DATA_JSON = {}; IT IS LOADED EXTERNALLY IN game.html
 
 // The parent method in adding the next article
 function changePage(id, choiceNumber) {
