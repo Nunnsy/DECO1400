@@ -390,11 +390,60 @@ var GAME_DATA_JSON = [
         'type': 'choice',
         'choice': [{
             'text': 'Does \'delusional\' ring a bell?',
-            'target': 000000000000000000000000000000000000000
+            'target': 'ShutTheHellUp'
         }, {
             'text': 'No doubt!',
-            'target': 000000000000000000000000000000000000000
+            'target': 'AhaKnewIt'
         }]
+    },
+
+    {
+        'id': 'ShutTheHellUp',
+        'type': 'message',
+        'message': 'Does \'Shut the hell up?\' ring a bell?',
+        'target': 'NeedToFocus'
+    },
+
+    {
+        'id': 'NeedToFocus',
+        'type': 'message',
+        'message': 'Besides, I need to focus now.',
+        'target': 'FindOutWhereIAm'
+    },
+
+    {
+        'id': 'FindOutWhereIAm',
+        'type': 'message',
+        'message': 'Find out where I am...',
+        'target': 'Hmm1'
+    },
+
+    {
+        'id': 'Hmm1',
+        'type': 'message',
+        'message': 'Hmm...',
+        'target': 'WellSandyRidge'
+    },
+
+    {
+        'id': 'AhaKnewIt',
+        'type': 'message',
+        'message': 'Aha! Knew it.',
+        'target': 'LookingForSomeone'
+    },
+
+    {
+        'id': 'LookingForSomeone',
+        'type': 'message',
+        'message': 'I suppose I better start looking for someone.',
+        'target': 'OrSomething'
+    },
+
+    {
+        'id': 'OrSomething',
+        'type': 'message',
+        'message': '...or something?',
+        'target': 'WellSandyRidge'
     },
 
     {
