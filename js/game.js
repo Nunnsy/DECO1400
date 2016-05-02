@@ -1,7 +1,8 @@
+// Types of data: message, decision, status(unlock is in seconds)
+// var GAME_DATA_JSON = {}; IT IS LOADED EXTERNALLY IN game.html (gamedata.js)
+
 var gamePath = [];
 
-// Types of data: message, decision, status(unlock is in minutes)
-// var GAME_DATA_JSON = {}; IT IS LOADED EXTERNALLY IN game.html
 
 // The parent method in adding the next article
 function changePage(id, choiceNumber) {
@@ -237,6 +238,7 @@ function addEnd(liveData) {
     }
 }
 
+
 // SAVE FUNCTIONS
 
 function loadPath() {
@@ -269,6 +271,7 @@ function loadPath() {
 }
 
 // UTILITY FUNCTIONS
+
 function getCurrentDate() {
     return new Date();
 }
