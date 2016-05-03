@@ -598,11 +598,11 @@ var GAME_DATA_JSON = [
         "id": "YouAreUseful",
         "type": "message",
         "message": "Well you're useful.",
-        "target": "LookForShaleRock"
+        "target": "SomethingYouCanUseOrFood"
     },
 
     {
-        "id": "ShaleRockOrNotSure",
+        "id": "SomethingYouCanUseOrFood",
         "type": "choice",
         "choice": [{
             "text": "Is there something else you can use?",
