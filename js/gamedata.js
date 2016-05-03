@@ -657,11 +657,11 @@ var GAME_DATA_JSON = [
         "id": "FindSomeTinder",
         "type": "message",
         "message": "So... Do I find some tinder?",
-        "target": "ThinkOrLook"
+        "target": "GatherTinderMightNotWork"
     },
 
     {
-        "id": "ThinkOrLook",
+        "id": "GatherTinderMightNotWork",
         "type": "choice",
         "choice": [{
             "text": "Gather tinder.",
@@ -691,11 +691,11 @@ var GAME_DATA_JSON = [
         "id": "MightNotWork",
         "type": "message",
         "message": "Oh, why's that?",
-        "target": "ThinkOrLook"
+        "target": "GoFindItMightBeTooWet"
     },
 
     {
-        "id": "ThinkOrLook",
+        "id": "GoFindItMightBeTooWet",
         "type": "choice",
         "choice": [{
             "text": "Nevermind. Just go find it.",
