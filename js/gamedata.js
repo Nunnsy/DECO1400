@@ -588,8 +588,9 @@ var GAME_DATA_JSON = [
 
     {
         "id": "LookForShaleRock",
-        "type": "message",
-        "message": "Brian searches for shale rock...",
+        "type": "status",
+        "text": "Brian searches for shale rock...",
+        "unlock": 90,
         "target": 000000000000000000000000000000000000000000000000000
     },
 
