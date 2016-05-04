@@ -45,9 +45,9 @@ function scrollToBottom() {
 
 function addToPath(id, choiceNumber) {
     if (choiceNumber != null) {
-        var lastID = gamePath.pop();
-        lastID = lastID + ':' + choiceNumber;
-        gamePath.push(lastID);
+        var lastId = gamePath.pop();
+        lastId = lastId + ':' + choiceNumber;
+        gamePath.push(lastId);
     }
 
     gamePath.push(id.toString());
@@ -119,43 +119,43 @@ function addMessage(data, liveData) {
     if (liveData) {
         // First show that Brian is replying
 
-        $('.content').append('\
-        <article class="animated fadeIn">\
-            <div class="message load">\
-                <span class="dots">&#8230;</span>\
-            </div>\
-        </article>\
-        ');
+        elementBuffer = articleContainer.clone().append(
+            $('<div>').addClass('message load').append(
+              $('<span>').addClass('dots').html('&#8230;')
+            )
+          );
+
+          $('.content').append(elementBuffer);
 
         scrollToBottom();
 
         // Set a delay to change the dots to the message depending on how long the message is
         setTimeout(function() {
-            $('article:last-of-type').find('.message').removeClass('load');
-            $('article:last-of-type').find('.dots').remove();
-            $('article:last-of-type').find('.message').append('<div class="message animated fadeIn">' + data.message + '</div>');
+          var lastMessage = $('div:last');
+          lastMessage.find('.dots').remove();
+            lastMessage.removeClass('load').addClass('animated fadeIn');
+            lastMessage.html(data.message);
 
             changePage(data.target);
 
             scrollToBottom();
         }, 50 * data.message.length + 100);
     } else {
-        $('.content').append('\
-    <article class="animated fadeIn">\
-      <div class="message">\
-        <div class="message">' + data.message + '</div>\
-      </div>\
-    </article>\
-  ');
+
+      elementBuffer = articleContainer.clone().append(
+          $('<div>').addClass('message').html(data.message)
+        );
+
+        $('.content').append(elementBuffer);
     }
 }
 
-function addChoice(data, liveData, lastID) {
+function addChoice(data, liveData, lastId) {
   elementBuffer = articleContainer.clone().append(
       $('<div>').addClass('choice').append(
-        $('<a>').attr('id', 'button0').attr('onclick', 'buttonPress(\'' + data.choice[0].target + '\', 0)').text(data.choice[0].text)
+        $('<a>').attr('id', 'button0').attr('onclick', 'buttonPress(\'' + data.choice[0].target + '\', 0)').html(data.choice[0].text)
       ).append(
-        $('<a>').attr('id', 'button1').attr('onclick', 'buttonPress(\'' + data.choice[1].target + '\', 1)').text(data.choice[1].text)
+        $('<a>').attr('id', 'button1').attr('onclick', 'buttonPress(\'' + data.choice[1].target + '\', 1)').html(data.choice[1].text)
       )
   );
 
@@ -166,8 +166,8 @@ function addChoice(data, liveData, lastID) {
     } else {
         var otherId = null;
 
-        if (lastID != null) {
-            switch (lastID) {
+        if (lastId != null) {
+            switch (lastId) {
                 case 0:
                     otherId = 1;
                     break;
@@ -183,7 +183,7 @@ function addChoice(data, liveData, lastID) {
 
 function addStatus(data, liveData) {
   elementBuffer = articleContainer.clone().append(
-      $('<div>').addClass('status').text('* ' + data.text + ' *')
+      $('<div>').addClass('status').html('* ' + data.text + ' *')
     );
 
     $('.content').append(elementBuffer);
@@ -198,7 +198,7 @@ function addEnd(liveData) {
 
   elementBuffer = articleContainer.clone().append(
       $('<div>').addClass('end').append(
-        $('<a>').attr('href', 'index.html').text('Return Home')
+        $('<a>').attr('href', 'index.html').html('Return Home')
       )
     );
 
@@ -216,7 +216,7 @@ function loadPath() {
     gamePath = JSON.parse(localStorage.getItem('storyPath'));
     console.log(gamePath);
 
-    var lastID = null;
+    var lastId = null;
 
     // Iterate through all previously made paths
     $.each(gamePath, function(index, pathValue) {
@@ -229,10 +229,10 @@ function loadPath() {
         }
         addData(id, false, choice);
 
-        lastID = id;
+        lastId = id;
     });
 
-    var lastData = getData(lastID);
+    var lastData = getData(lastId);
 
     if (lastData.type == 'message') {
       changePage(lastData.target);
