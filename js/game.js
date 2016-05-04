@@ -3,6 +3,8 @@
 
 var gamePath = [];
 
+var articleContainer = $('<article>').addClass('animated fadeIn');
+var elementBuffer = null;
 
 // The parent method in adding the next article
 function changePage(id, choiceNumber) {
@@ -149,33 +151,22 @@ function addMessage(data, liveData) {
 }
 
 function addChoice(data, liveData, lastID) {
+  elementBuffer = articleContainer.clone().append(
+      $('<div>').addClass('choice').append(
+        $('<a>').attr('id', 'button0').attr('onclick', 'buttonPress(\'' + data.choice[0].target + '\', 0)').text(data.choice[0].text)
+      ).append(
+        $('<a>').attr('id', 'button1').attr('onclick', 'buttonPress(\'' + data.choice[1].target + '\', 1)').text(data.choice[1].text)
+      )
+  );
+
+  $('.content').append(elementBuffer);
+
     if (liveData) {
-
-        $('.content').append('\
-          <article class="animated fadeIn">\
-            <div class="choice">\
-              <a id="button0" onclick="buttonPress(\'' + data.choice[0].target + '\', 0)">' + data.choice[0].text + '</a>\
-              <a id="button1" onclick="buttonPress(\'' + data.choice[1].target + '\', 1)">' + data.choice[1].text + '</a>\
-            </div>\
-          </article>\
-        ');
-
-
         scrollToBottom();
     } else {
         var otherId = null;
 
-        if (lastID == null) {
-            $('.content').append('\
-      <article class="animated fadeIn">\
-        <div class="choice">\
-          <a id="button0" onclick="buttonPress(\'' + data.choice[0].target + '\', 0)">' + data.choice[0].text + '</a>\
-          <a id="button1" onclick="buttonPress(\'' + data.choice[1].target + '\', 1)">' + data.choice[1].text + '</a>\
-        </div>\
-      </article>\
-    ');
-        } else {
-
+        if (lastID != null) {
             switch (lastID) {
                 case 0:
                     otherId = 1;
@@ -184,39 +175,18 @@ function addChoice(data, liveData, lastID) {
                     otherId = 0;
                     break;
             }
-
-            if (otherId == 0) {
-                $('.content').append('\
-      <article class="animated fadeIn">\
-        <div class="choice chosen">\
-          <a id="button0" class="choice-no" onclick="buttonPress(\'' + data.choice[0].target + '\', 0)">' + data.choice[0].text + '</a>\
-          <a id="button1" onclick="buttonPress(\'' + data.choice[1].target + '\', 1)">' + data.choice[1].text + '</a>\
-        </div>\
-      </article>\
-    ');
-            } else {
-                $('.content').append('\
-      <article class="animated fadeIn">\
-        <div class="choice chosen">\
-          <a id="button0" onclick="buttonPress(\'' + data.choice[0].target + '\', 0)">' + data.choice[0].text + '</a>\
-          <a id="button1" class="choice-no" onclick="buttonPress(\'' + data.choice[1].target + '\', 1)">' + data.choice[1].text + '</a>\
-        </div>\
-      </article>\
-    ');
-            }
-
+            elementBuffer.find('div').addClass('chosen');
+            elementBuffer.find('div #button' + otherId).addClass('choice-no');
         }
     }
 }
 
 function addStatus(data, liveData) {
-    $('.content').append('\
-  <article class="animated fadeIn">\
-    <div class="status">\
-      * ' + data.text + ' *\
-    </div>\
-  </article>\
-  ');
+  elementBuffer = articleContainer.clone().append(
+      $('<div>').addClass('status').text('* ' + data.text + ' *')
+    );
+
+    $('.content').append(elementBuffer);
 
     if (liveData) {
         scrollToBottom();
@@ -225,13 +195,14 @@ function addStatus(data, liveData) {
 }
 
 function addEnd(liveData) {
-    $('.content').append('\
-    <article class="animated fadeIn">\
-      <div class="end">\
-        <a href="index.html">Return Home</a>\
-      </div>\
-    </article>\
-  ');
+
+  elementBuffer = articleContainer.clone().append(
+      $('<div>').addClass('end').append(
+        $('<a>').attr('href', 'index.html').text('Return Home')
+      )
+    );
+
+    $('.content').append(elementBuffer);
 
     if (liveData) {
         scrollToBottom();
