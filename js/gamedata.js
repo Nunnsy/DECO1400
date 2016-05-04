@@ -548,7 +548,7 @@ var GAME_DATA_JSON = [
     {
         "id": "MagicalBerries",
         "type": "message",
-        "message": "There's always magical berries in a forest.",
+        "message": "There's always magically appearing berries in a forest.",
         "target": "SearchForBerries"
     },
 
