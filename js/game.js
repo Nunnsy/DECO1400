@@ -121,18 +121,18 @@ function addMessage(data, liveData) {
 
         elementBuffer = articleContainer.clone().append(
             $('<div>').addClass('message load').append(
-              $('<span>').addClass('dots').html('&#8230;')
+                $('<span>').addClass('dots').html('&#8230;')
             )
-          );
+        );
 
-          $('.content').append(elementBuffer);
+        $('.content').append(elementBuffer);
 
         scrollToBottom();
 
         // Set a delay to change the dots to the message depending on how long the message is
         setTimeout(function() {
-          var lastMessage = $('div:last');
-          lastMessage.find('.dots').remove();
+            var lastMessage = $('div:last');
+            lastMessage.find('.dots').remove();
             lastMessage.removeClass('load').addClass('animated fadeIn');
             lastMessage.html(data.message);
 
@@ -142,8 +142,8 @@ function addMessage(data, liveData) {
         }, 50 * data.message.length + 100);
     } else {
 
-      elementBuffer = articleContainer.clone().append(
-          $('<div>').addClass('message').html(data.message)
+        elementBuffer = articleContainer.clone().append(
+            $('<div>').addClass('message').html(data.message)
         );
 
         $('.content').append(elementBuffer);
@@ -151,15 +151,15 @@ function addMessage(data, liveData) {
 }
 
 function addChoice(data, liveData, lastId) {
-  elementBuffer = articleContainer.clone().append(
-      $('<div>').addClass('choice').append(
-        $('<a>').attr('id', 'button0').attr('onclick', 'buttonPress(\'' + data.choice[0].target + '\', 0)').html(data.choice[0].text)
-      ).append(
-        $('<a>').attr('id', 'button1').attr('onclick', 'buttonPress(\'' + data.choice[1].target + '\', 1)').html(data.choice[1].text)
-      )
-  );
+    elementBuffer = articleContainer.clone().append(
+        $('<div>').addClass('choice').append(
+            $('<a>').attr('id', 'button0').attr('onclick', 'buttonPress(\'' + data.choice[0].target + '\', 0)').html(data.choice[0].text)
+        ).append(
+            $('<a>').attr('id', 'button1').attr('onclick', 'buttonPress(\'' + data.choice[1].target + '\', 1)').html(data.choice[1].text)
+        )
+    );
 
-  $('.content').append(elementBuffer);
+    $('.content').append(elementBuffer);
 
     if (liveData) {
         scrollToBottom();
@@ -182,8 +182,8 @@ function addChoice(data, liveData, lastId) {
 }
 
 function addStatus(data, liveData) {
-  elementBuffer = articleContainer.clone().append(
-      $('<div>').addClass('status').html('* ' + data.text + ' *')
+    elementBuffer = articleContainer.clone().append(
+        $('<div>').addClass('status').html('* ' + data.text + ' *')
     );
 
     $('.content').append(elementBuffer);
@@ -196,10 +196,10 @@ function addStatus(data, liveData) {
 
 function addEnd(liveData) {
 
-  elementBuffer = articleContainer.clone().append(
-      $('<div>').addClass('end').append(
-        $('<a>').attr('href', 'index.html').html('Return Home')
-      )
+    elementBuffer = articleContainer.clone().append(
+        $('<div>').addClass('end').append(
+            $('<a>').attr('href', 'index.html').html('Return Home')
+        )
     );
 
     $('.content').append(elementBuffer);
@@ -235,7 +235,7 @@ function loadPath() {
     var lastData = getData(lastId);
 
     if (lastData.type == 'message') {
-      changePage(lastData.target);
+        changePage(lastData.target);
     }
 
     scrollToBottom();
