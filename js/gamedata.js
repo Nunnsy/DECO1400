@@ -132,7 +132,7 @@ var GAME_DATA_JSON = [
     {
         "id": "ShouldGetUp",
         "type": "message",
-        "message": "I should get up. I swear there's bugs all over me.",
+        "message": "I should get up. I swear there are bugs all over me.",
         "target": "CheckOrRest"
     },
 
@@ -474,7 +474,7 @@ var GAME_DATA_JSON = [
     {
         "id": "HelpOrSupplies",
         "type": "message",
-        "message": "What should I do, call for help of find some supplies?",
+        "message": "What should I do, call for help or find some supplies?",
         "target": "CallForHelpOrFindSupplies"
     },
 
