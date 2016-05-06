@@ -99,6 +99,7 @@ landing page.
 nav ul {
   list-style: none;
   text-align: center;
+  padding: 0;
 }
 
 /* Change display to inline-block and add some padding */
