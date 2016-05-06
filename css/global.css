@@ -93,9 +93,27 @@ landing page.
 }
 
 
+/* Navigation styling */
+
+/* Remove bullet points and align text to the center */
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+/* Change display to inline-block and add some padding */
+nav ul li {
+  display: inline-block;
+  padding: 0 40px;
+}
+
+
+/* Default header styling - change of font */
 h1 {
   font-family: 'Rock Salt', cursive;
 }
+
+/* Default link styling */
 
 a, a:link, a:visited {
   text-decoration: none;
