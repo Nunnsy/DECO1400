@@ -793,5 +793,36 @@ var GAME_DATA_JSON = [
         "text": "Brian searches for dead wood and stone...",
         "unlock": 90,
         "target": 0000000000000000000000000000000000000000000000000
+    },
+
+
+
+
+
+
+    
+
+    {
+        "id": "ThisIsTheEnd",
+        "type": "status",
+        "text": "This is far as the story goes for the moment",
+        "unlock": 3,
+        "target": "Sorry"
+    },
+
+    {
+        "id": "Sorry",
+        "type": "status",
+        "text": "Sorry...",
+        "unlock": 3,
+        "target": "HopeYouHaveEnjoyed"
+    },
+
+    {
+        "id": "HopeYouHaveEnjoyed",
+        "type": "status",
+        "text": "Hope you have enjoyed it",
+        "unlock": 3,
+        "target": "End"
     }
 ];
