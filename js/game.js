@@ -1,23 +1,25 @@
-// Types of data: message, decision, status(unlock is in seconds)
-// var GAME_DATA_JSON = {}; IT IS LOADED EXTERNALLY IN game.html (gamedata.js)
+// Types of data: message, choice, status(unlock is in seconds), and end.
+// var GAME_DATA_JSON = {}; IT IS LOADED EXTERNALLY IN game.html (gamedata.js).
 
 var gamePath = [];
 
 var articleContainer = $('<article>').addClass('animated fadeIn');
 var elementBuffer = null;
 
-// The parent method in adding the next article
+// The parent method in adding the next article.
 function changePage(id, choiceNumber) {
-    // Add last page change to story path
+    // Add last page change to story path.
     addToPath(id, choiceNumber);
 
-    // Adds a delay so messages come in more organically
+    // Adds a delay so messages appear more organically.
     setTimeout(function() {
         addData(id, true, null);
     }, 500);
 }
 
+// Called when a decision button is pressed.
 function buttonPress(target, id) {
+    // Used to define the identifier of the other button.
     var otherId = null;
 
     switch (id) {
@@ -29,12 +31,16 @@ function buttonPress(target, id) {
             break;
     }
 
+    // Edit the decision article element and made the buttons no longer clickable.
     $('article:last-of-type').find('.choice').addClass('chosen');
+    // Gray out the button which was not clicked.
     $('article:last-of-type').find('#button' + otherId).addClass('choice-no');
+    // Direct the story to the next element respective to the button's target.
     changePage(target, id);
 }
 
 function scrollToBottom() {
+    // A small command to scroll the page to the lowest point in half a second.
     $('html, body').animate({
             scrollTop: $(document).height() - $(window).height()
         },
