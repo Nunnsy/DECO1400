@@ -11,7 +11,10 @@ function resetGame() {
 
 function confirm() {
     localStorage.removeItem('storyPath');
-    localStorage.removeItem('storyUnlock');
+
+    if (localStorage.getItem('storyUnlock') != null) {
+      localStorage.removeItem('storyUnlock');
+    }
 
     $('.reset-button').addClass('reset-button-hidden');
     $('.reset-container').addClass('animated fadeOut');
