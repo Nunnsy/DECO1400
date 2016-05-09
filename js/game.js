@@ -1,11 +1,16 @@
 // Types of data: message, choice, status(unlock is in seconds), and end.
 // var GAME_DATA_JSON = {}; IT IS LOADED EXTERNALLY IN game.html (gamedata.js).
 
+// The array in which identifiers are stored.
 var gamePath = [];
 
+// Define the container for all story content so we can continually clone this.
 var articleContainer = $('<article>').addClass('animated fadeIn');
+
+// Create an element buffer for appending content.
 var elementBuffer = null;
 
+// Create an array to store the current decision targets.
 var buttonTargets = [];
 
 // The parent method in adding the next article.
