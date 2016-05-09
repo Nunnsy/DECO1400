@@ -50,21 +50,28 @@ function scrollToBottom() {
 }
 
 function addToPath(id, choiceNumber) {
+    // If a choice was made, add the identifier onto the game path deliniated with a ':'.
     if (choiceNumber != null) {
+        // Get the last id from the game path and remove it from the array.
         var lastId = gamePath.pop();
+        // Append either a 0 or 1 depending on the choice.
         lastId = lastId + ':' + choiceNumber;
+        // Add it to the end of the game path array.
         gamePath.push(lastId);
     }
 
-    gamePath.push(id.toString());
+    // Add the new id to the path.
+    gamePath.push(id);
 
+    // Put the updated game path into local storage.
     localStorage.setItem('storyPath', JSON.stringify(gamePath));
 
+    // For debug purposes.
     console.log(gamePath);
 }
 
 function getData(id) {
-    // Grabs the required data for the path in which the user has taken
+    // Grabs the required data for the path in which the user has taken.
     var dataArray = $.grep(GAME_DATA_JSON, function(obj) {
         return obj.id === id;
     });
