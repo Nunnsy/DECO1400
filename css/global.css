@@ -48,7 +48,7 @@ landing page.
   Uses the background image stored within the images folder and makes it
   cover the screen.
   */
-  background-image: url("../images/titlebg.jpg");
+  background-image: url("../images/titlebg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
