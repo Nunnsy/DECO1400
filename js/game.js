@@ -6,6 +6,8 @@ var gamePath = [];
 var articleContainer = $('<article>').addClass('animated fadeIn');
 var elementBuffer = null;
 
+var buttonTargets = [];
+
 // The parent method in adding the next article.
 function changePage(id, choiceNumber) {
     // Add last page change to story path.
@@ -18,7 +20,7 @@ function changePage(id, choiceNumber) {
 }
 
 // Called when a decision button is pressed.
-function buttonPress(target, id) {
+function buttonPress(id) {
     // Used to define the identifier of the other button.
     var otherId = null;
 
@@ -36,7 +38,7 @@ function buttonPress(target, id) {
     // Gray out the button which was not clicked.
     $('article:last-of-type').find('#button' + otherId).addClass('choice-no');
     // Direct the story to the next element respective to the button's target.
-    changePage(target, id);
+    changePage(buttonTargets[id], id);
 }
 
 function scrollToBottom() {
@@ -166,11 +168,13 @@ function addMessage(data, liveData) {
 function addChoice(data, liveData, lastId) {
     elementBuffer = articleContainer.clone().append(
         $('<div>').addClass('choice').append(
-            $('<a>').attr('id', 'button0').attr('onclick', 'buttonPress(\'' + data.choice[0].target + '\', 0)').html(data.choice[0].text)
+            $('<a>').attr('id', 'button0').html(data.choice[0].text)
         ).append(
-            $('<a>').attr('id', 'button1').attr('onclick', 'buttonPress(\'' + data.choice[1].target + '\', 1)').html(data.choice[1].text)
+            $('<a>').attr('id', 'button1').html(data.choice[1].text)
         )
     );
+
+    buttonTargets = [data.choice[0].target, data.choice[1].target];
 
     $('.content').append(elementBuffer);
 
@@ -192,6 +196,15 @@ function addChoice(data, liveData, lastId) {
             elementBuffer.find('div #button' + otherId).addClass('choice-no');
         }
     }
+
+    // Must place the event handler here as new content is generated and we need to bind this.
+    $('.choice:last a').click(function() {
+        if ($(this).attr('id') == 'button0') {
+            buttonPress(0);
+        } else if ($(this).attr('id') == 'button1') {
+            buttonPress(1);
+        }
+    });
 }
 
 function addStatus(data, liveData) {
