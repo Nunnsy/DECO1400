@@ -114,6 +114,10 @@ h1 {
   font-family: 'Rock Salt', cursive;
 }
 
+h2 {
+  font-size: 1.8em;
+}
+
 /* Default link styling */
 
 a, a:link, a:visited {
