@@ -2,6 +2,10 @@ h2 {
   font-size: 1.2em;
 }
 
+p {
+  text-align: center;
+}
+
 /*
 Container is used to center the jumbotron vertically and horizontally using
 CSS3 properties.
