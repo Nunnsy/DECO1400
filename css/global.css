@@ -112,6 +112,7 @@ nav ul li {
 /* Default header styling - change of font */
 h1 {
   font-family: 'Rock Salt', cursive;
+  font-size: 2em;
 }
 
 h2 {
