@@ -108,7 +108,6 @@ nav ul li {
   padding: 0 40px;
 }
 
-
 /* Default header styling - change of font */
 h1 {
   font-family: 'Rock Salt', cursive;
@@ -139,5 +138,5 @@ a:hover {
 }
 
 a:active, a:focus {
-  color: #866418;
+  color: #d19c25;
 }
