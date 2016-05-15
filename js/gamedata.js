@@ -516,7 +516,7 @@ var GAME_DATA_JSON = [
         "id": "SunlightCommodity",
         "type": "message",
         "message": "I think sunlight is going a small commodity soon too...",
-        "target": 0000000000000000000000000000000000000000000
+        "target": "ThisIsTheEnd"
     },
 
     {
@@ -557,7 +557,7 @@ var GAME_DATA_JSON = [
         "type": "status",
         "text": "Brian searches for berries...",
         "unlock": 90,
-        "target": 0000000000000000000000000000000000000000000000000
+        "target": "ThisIsTheEnd"
     },
 
     {
@@ -591,7 +591,7 @@ var GAME_DATA_JSON = [
         "type": "status",
         "text": "Brian searches for shale rock...",
         "unlock": 90,
-        "target": 000000000000000000000000000000000000000000000000000
+        "target": "ThisIsTheEnd"
     },
 
     {
@@ -684,7 +684,7 @@ var GAME_DATA_JSON = [
         "type": "status",
         "text": "Brian searches for tinder...",
         "unlock": 90,
-        "target": 0000000000000000000000000000000000000000000000000
+        "target": "ThisIsTheEnd"
     },
 
     {
@@ -758,7 +758,7 @@ var GAME_DATA_JSON = [
         "type": "status",
         "text": "Brian searches for dead wood...",
         "unlock": 90,
-        "target": 0000000000000000000000000000000000000000000000000
+        "target": "ThisIsTheEnd"
     },
 
     {
@@ -792,7 +792,7 @@ var GAME_DATA_JSON = [
         "type": "status",
         "text": "Brian searches for dead wood and stone...",
         "unlock": 90,
-        "target": 0000000000000000000000000000000000000000000000000
+        "target": "ThisIsTheEnd"
     },
 
 
@@ -813,7 +813,7 @@ var GAME_DATA_JSON = [
     {
         "id": "Sorry",
         "type": "status",
-        "text": "Sorry...",
+        "text": "Sorry... You can always reset the game from the home screen and play a different path",
         "unlock": 3,
         "target": "HopeYouHaveEnjoyed"
     },
