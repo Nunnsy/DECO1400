@@ -346,7 +346,7 @@ function appendContent() {
 }
 
 // When the document has loaded, execute following code
-$(function() {
+$(document).ready(function() {
     // Check whether story data exists in storage for user to continue where they left.
     if (localStorage.getItem("storyPath") == null) {
         // If no data exists, begin the story from the start.
