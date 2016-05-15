@@ -5,7 +5,7 @@
 var gamePath = [];
 
 // Define the container for all story content so we can continually clone this.
-var articleContainer = $('<article>').addClass('animated fadeIn');
+var articleContainer = $("<article>").addClass("animated fadeIn");
 
 // Create an element buffer for appending content.
 var elementBuffer = null;
@@ -39,15 +39,15 @@ function buttonPress(id) {
     }
 
     // Change the button to signify a decision has been made.
-    buttonChosen($('article:last-of-type'), otherId);
+    buttonChosen($("article:last-of-type"), otherId);
 
-    // Direct the story to the next element respective to the button's target.
+    // Direct the story to the next element respective to the button"s target.
     changePage(buttonTargets[id], id);
 }
 
 function scrollToBottom() {
     // A small command to scroll the page to the lowest point in half a second.
-    $('html, body').animate({
+    $("html, body").animate({
             scrollTop: $(document).height() - $(window).height()
         },
         500,
@@ -56,12 +56,12 @@ function scrollToBottom() {
 }
 
 function addToPath(id, choiceNumber) {
-    // If a choice was made, add the identifier onto the game path deliniated with a ':'.
+    // If a choice was made, add the identifier onto the game path deliniated with a ":".
     if (choiceNumber != null) {
         // Get the last id from the game path and remove it from the array.
         var lastId = gamePath.pop();
         // Append either a 0 or 1 depending on the choice.
-        lastId = lastId + ':' + choiceNumber;
+        lastId = lastId + ":" + choiceNumber;
         // Add it to the end of the game path array.
         gamePath.push(lastId);
     }
@@ -70,7 +70,7 @@ function addToPath(id, choiceNumber) {
     gamePath.push(id);
 
     // Put the updated game path into local storage.
-    localStorage.setItem('storyPath', JSON.stringify(gamePath));
+    localStorage.setItem("storyPath", JSON.stringify(gamePath));
 
     // For debug purposes.
     console.log(gamePath);
@@ -90,7 +90,7 @@ function getData(id) {
 // Continue the story once the unlock time has been reached.
 function continueStory() {
     // Remove the unlock date from local storage.
-    localStorage.removeItem('storyUnlock');
+    localStorage.removeItem("storyUnlock");
 
     // Get the last status data by indexing the last element in the array.
     var lastStatus = getData(gamePath[gamePath.length - 1]);
@@ -106,13 +106,13 @@ function lockStory(seconds) {
     // Logs the current date.
     console.log(unlockDate);
 
-    // Sets the current date 'seconds' seconds further into the future.
+    // Sets the current date "seconds" seconds further into the future.
     unlockDate.setSeconds(unlockDate.getSeconds() + parseInt(seconds));
     // Logs the unlock date of the story.
     console.log(unlockDate);
 
     // Add this unlock date to the local storage in case the user leaves.
-    localStorage.setItem('storyUnlock', unlockDate);
+    localStorage.setItem("storyUnlock", unlockDate);
 
     // If the user stays on the page, wait till the time has elapsed before continuing.
     setTimeout(function() {
@@ -129,32 +129,32 @@ function addData(id, live, choice) {
 
     // Use a different method of appending content depending on the data type.
     switch (data.type) {
-        case 'message':
+        case "message":
             addMessage(data, live);
             break;
-        case 'choice':
+        case "choice":
             addChoice(data, live, choice);
             break;
-        case 'status':
+        case "status":
             addStatus(data, live);
             break;
-        case 'end':
+        case "end":
             addEnd(live);
             break;
         default:
             // In case there is unexpected data, log this error so we can trace it.
-            console.error('Unexpected data type: \'' + data.type + '\' at ID: ' + data.id);
+            console.error("Unexpected data type: \"" + data.type + "\" at ID: " + data.id);
     }
 }
 
 function addMessage(data, liveData) {
 
-    // If we are dealing with the live story, follow this method. otherwise if we're reloading the data, take a different route.
+    // If we are dealing with the live story, follow this method. otherwise if we"re reloading the data, take a different route.
     if (liveData) {
         // First show that Brian is replying
         elementBuffer = articleContainer.clone().append(
-            $('<div>').addClass('message load').append(
-                $('<span>').addClass('dots').html('&#8230;')
+            $("<div>").addClass("message load").append(
+                $("<span>").addClass("dots").html("&#8230;")
             )
         );
 
@@ -167,24 +167,24 @@ function addMessage(data, liveData) {
         // Set a delay to change the dots to the message depending on how long the message is.
         setTimeout(function() {
             // Find the last message.
-            var lastMessage = $('.message:last');
+            var lastMessage = $(".message:last");
             // Remove the elipsis and its container.
-            lastMessage.find('.dots').remove();
-            // Change the class from 'load' to both 'animated' and 'fadeIn' so message appears gracefully.
-            lastMessage.removeClass('load').addClass('animated fadeIn');
+            lastMessage.find(".dots").remove();
+            // Change the class from "load" to both "animated" and "fadeIn" so message appears gracefully.
+            lastMessage.removeClass("load").addClass("animated fadeIn");
             // Add the content of the message to the container. .html() is used as some messages contain HTML tags.
             lastMessage.html(data.message);
 
-            // Advance the story with the message's target.
+            // Advance the story with the message"s target.
             changePage(data.target);
 
             // Scroll the page to the bottom so the user can see the new content.
             scrollToBottom();
         }, 50 * data.message.length + 100);
     } else {
-        // If we are loading old session data, don't worry about the dots animation just add the content.
+        // If we are loading old session data, don"t worry about the dots animation just add the content.
         elementBuffer = articleContainer.clone().append(
-            $('<div>').addClass('message').html(data.message)
+            $("<div>").addClass("message").html(data.message)
         );
 
         // Append what is currently in the element buffer.
@@ -195,10 +195,10 @@ function addMessage(data, liveData) {
 function addChoice(data, liveData, lastId) {
     // Generate the two decision buttons and their container unique identifiers.
     elementBuffer = articleContainer.clone().append(
-        $('<div>').addClass('choice').append(
-            $('<a>').attr('id', 'button0').html(data.choice[0].text)
+        $("<div>").addClass("choice").append(
+            $("<a>").attr("id", "button0").html(data.choice[0].text)
         ).append(
-            $('<a>').attr('id', 'button1').html(data.choice[1].text)
+            $("<a>").attr("id", "button1").html(data.choice[1].text)
         )
     );
 
@@ -235,11 +235,11 @@ function addChoice(data, liveData, lastId) {
 
     // Must place the event handler here as new content is generated and we need to bind this to an event.
     // When a decision is made on the two options available, run the following function.
-    $('.choice:last a').click(function() {
+    $(".choice:last a").click(function() {
         // Determine which button was pressed and run the buttonPress method with the respective identifier.
-        if ($(this).attr('id') == 'button0') {
+        if ($(this).attr("id") == "button0") {
             buttonPress(0);
-        } else if ($(this).attr('id') == 'button1') {
+        } else if ($(this).attr("id") == "button1") {
             buttonPress(1);
         }
     });
@@ -248,7 +248,7 @@ function addChoice(data, liveData, lastId) {
 function addStatus(data, liveData) {
     // Generate the status data.
     elementBuffer = articleContainer.clone().append(
-        $('<div>').addClass('status').html('* ' + data.text + ' *')
+        $("<div>").addClass("status").html("* " + data.text + " *")
     );
 
     // Append what is currently in the element buffer.
@@ -264,10 +264,10 @@ function addStatus(data, liveData) {
 }
 
 function addEnd(liveData) {
-    // Generate the story's end content.
+    // Generate the story"s end content.
     elementBuffer = articleContainer.clone().append(
-        $('<div>').addClass('end').append(
-            $('<a>').attr('href', 'index.html').html('Return Home')
+        $("<div>").addClass("end").append(
+            $("<a>").attr("href", "index.html").html("Return Home")
         )
     );
 
@@ -283,16 +283,16 @@ function addEnd(liveData) {
 // Called when a decision button needs to be grayed out and for the button to lose interactivity.
 function buttonChosen(container, otherId) {
     // Edit the decision article element and made the buttons no longer clickable.
-    container.find('.choice').addClass('chosen');
+    container.find(".choice").addClass("chosen");
     // Gray out the button which was not clicked.
-    container.find('#button' + otherId).addClass('choice-no');
+    container.find("#button" + otherId).addClass("choice-no");
 }
 
 // SAVE FUNCTIONS
 
 function loadPath() {
     // Load and parse the stored path array (in JSON format) from local storage into the current game path array.
-    gamePath = JSON.parse(localStorage.getItem('storyPath'));
+    gamePath = JSON.parse(localStorage.getItem("storyPath"));
     // Log the stored game path.
     console.log(gamePath);
 
@@ -302,9 +302,9 @@ function loadPath() {
     // Iterate through all entries in the loaded game path.
     $.each(gamePath, function(index, pathValue) {
         // Check to see if a colon exists in the string.
-        if (pathValue.indexOf(':') != -1) {
-            // Split the value to separate the identifer of the choice and the user's decision.
-            var splitPath = pathValue.split(':');
+        if (pathValue.indexOf(":") != -1) {
+            // Split the value to separate the identifer of the choice and the user"s decision.
+            var splitPath = pathValue.split(":");
             // Set the values accordingly.
             var id = splitPath[0];
             var choice = parseInt(splitPath[1]);
@@ -324,7 +324,7 @@ function loadPath() {
     var lastData = getData(lastId);
 
     // If the data is a message, load the next part of the story.
-    if (lastData.type == 'message') {
+    if (lastData.type == "message") {
         // Required as if the user leaves the game whilst recieving a message, the following message will not load.
         changePage(lastData.target);
     }
@@ -342,24 +342,24 @@ function getCurrentDate() {
 
 function appendContent() {
     // Adds whatever is in the content buffer onto the page.
-    $('.content').append(elementBuffer);
+    $(".content").append(elementBuffer);
 }
 
 // When the document has loaded, execute following code
 $(function() {
     // Check whether story data exists in storage for user to continue where they left.
-    if (localStorage.getItem('storyPath') == null) {
+    if (localStorage.getItem("storyPath") == null) {
         // If no data exists, begin the story from the start.
-        changePage('Start');
+        changePage("Start");
     } else {
         // Load data to continue the story.
         loadPath();
     }
 
     // Check to see if we were waiting for Brian to respond.
-    if (localStorage.getItem('storyUnlock') != null) {
+    if (localStorage.getItem("storyUnlock") != null) {
         // Set the unlock date to what is stored in the local storage.
-        unlockDate = Date.parse(localStorage.getItem('storyUnlock'));
+        unlockDate = Date.parse(localStorage.getItem("storyUnlock"));
         // Get the current date.
         var dateNow = getCurrentDate();
 
