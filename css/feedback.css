@@ -1,0 +1,66 @@
+article {
+  width: 760px;
+  margin: 0 0 20px 0;
+  border: 1px #dddddd solid;
+  overflow: auto;
+}
+
+article:last-of-type {
+  margin: 0;
+}
+
+article > div {
+  float: left;
+  display: inline-block;
+}
+
+article > div * {
+  float: none;
+}
+
+.user-info {
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.user-info * {
+  margin-top: 10px;
+}
+
+.user-info *:last-child {
+  margin-bottom: 10px;
+}
+
+.user-feedback {
+  width: 550px;
+  margin: 5px;
+}
+
+form {
+  margin: 10px;
+}
+
+form div {
+  display: block;
+  overflow: auto;
+  margin: 5px 0;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input, textarea {
+  background-color: #dddddd;
+}
+
+input[type="submit"] {
+  float: right;
+  width: 200px;
+}
+
+.error {
+  color: #c34040;
+}

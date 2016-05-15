@@ -7,6 +7,7 @@
     <title>Feedback - Wilderness Lifeline</title>
 
     <!-- Import global stlying -->
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="css/global.css" type="text/css" />
     <!-- Import page specific styling -->
     <link rel="stylesheet" href="css/feedback.css" type="text/css" />
@@ -32,7 +33,81 @@
 
         <section>
             <h2>Feedback</h2>
-            <p>To be done...</p>
+            <article>
+                <form id="newFeedbackForm" method="post">
+                    <div class="feedback-name-input">
+                        <label for="feedbackName">Name: </label>
+                        <input type="text" id="feedbackName" name="feedbackName">
+                    </div>
+
+                    <div class="feedback-message-input">
+                        <div class="feedback-message-input-label">
+                            <label for="feedbackMessage">Feedback</label>
+                        </div>
+                        <textarea id="feedbackMessage"></textarea>
+                    </div>
+
+                    <div class="feedback-submit-input">
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+            </article>
+
+            <article>
+                <div class="user-info">
+                    <div class="user-name">
+                        Bender Rodriguez
+                    </div>
+                    <div class="user-date">
+                        14/05/2016
+                    </div>
+                </div>
+                <div class="user-feedback">
+                    Not one evil robot mastermind in this story. 0000/1010 would play. Bite my shiny metal ass.
+                </div>
+            </article>
+
+            <article>
+                <div class="user-info">
+                    <div class="user-name">
+                        Jean-Luc Picard
+                    </div>
+                    <div class="user-date">
+                        13/05/2016
+                    </div>
+                </div>
+                <div class="user-feedback">
+                    Captain's Log, Stardate 43125.8. We have entered the Canadian Wilderness with a native being known as 'Brian'. It seems our mission to explore tectonic disturbances has become one of survival.
+                </div>
+            </article>
+
+            <article>
+                <div class="user-info">
+                    <div class="user-name">
+                        Sherlock Holmes
+                    </div>
+                    <div class="user-date">
+                        12/05/2016
+                    </div>
+                </div>
+                <div class="user-feedback">
+                    Not very captivating for my mind. Though, I guess for the general, ignorant population they'd frantically enjoy this adventure. Good day to you.
+                </div>
+            </article>
+
+            <article>
+                <div class="user-info">
+                    <div class="user-name">
+                        Hubert J. Farnsworth
+                    </div>
+                    <div class="user-date">
+                        02/05/2016
+                    </div>
+                </div>
+                <div class="user-feedback">
+                    Good news everyone! I really did enjoy my experience on this adventure website. Reminded me of the days I myself was stranded once. Now I'm stranded here with you monkeys.
+                </div>
+            </article>
         </section>
     </section>
 
