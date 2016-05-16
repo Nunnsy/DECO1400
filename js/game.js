@@ -5,8 +5,8 @@
 var gamePath = [];
 
 // Define the container for all story content so we can continually clone this.
-// The CSS attribute allows us to fade the content in.
-var articleContainer = $("<article>").css("display", "none");
+// The hide function allows us to fade the content in.
+var articleContainer = $("<article>").hide();
 
 // Create an element buffer for appending content.
 var elementBuffer = null;
