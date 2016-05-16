@@ -16,6 +16,7 @@ function resetGame() {
     } else {
         // Change the reset button text to a confirmation queue for the user.
         $(".reset-container").fadeOut(200, function() {
+          // Gracefully swap the text.
           $(".reset-button").text("Are you sure?");
           $(".reset-container").fadeIn(200);
         });
@@ -35,7 +36,10 @@ function confirmReset() {
     }
 
     // Gracefully remove the reset button from view.
-    $(".reset-container").fadeOut(1000);
+    $(".reset-container").fadeOut(1000, function() {
+      // Remove the button completely after animation finishes.
+      $(this).remove();
+    });
 }
 
 // Function is run on page load to check if game data exists.
