@@ -18,6 +18,7 @@ $(document).ready(function() {
             complete = true;
         }
 
+        // If the form is completed...
         if (complete) {
             // Grabs a feedback article and clones it from the HTML so we don't create one from scratch.
             var newFeedback = $("article:last-of-type").clone();
