@@ -5,7 +5,8 @@
 var gamePath = [];
 
 // Define the container for all story content so we can continually clone this.
-var articleContainer = $("<article>").addClass("animated fadeIn");
+// The CSS attribute allows us to fade the content in.
+var articleContainer = $("<article>").css("display", "none");
 
 // Create an element buffer for appending content.
 var elementBuffer = null;
@@ -168,10 +169,11 @@ function addMessage(data, liveData) {
         setTimeout(function() {
             // Find the last message.
             var lastMessage = $(".message:last");
+
             // Remove the elipsis and its container.
             lastMessage.find(".dots").remove();
-            // Change the class from "load" to both "animated" and "fadeIn" so message appears gracefully.
-            lastMessage.removeClass("load").addClass("animated fadeIn");
+            // Remove the load class to ensure text is displayed properly.
+            lastMessage.removeClass("load");
             // Add the content of the message to the container. .html() is used as some messages contain HTML tags.
             lastMessage.html(data.message);
 
@@ -343,6 +345,8 @@ function getCurrentDate() {
 function appendContent() {
     // Adds whatever is in the content buffer onto the page.
     $(".content").append(elementBuffer);
+    // After adding the content, animate its entrance.
+    elementBuffer.fadeIn(400);
 }
 
 // When the document has loaded, execute following code
