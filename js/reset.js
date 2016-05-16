@@ -43,7 +43,7 @@ function confirmReset() {
 }
 
 // Function is run on page load to check if game data exists.
-if (localStorage.getItem("storyPath") != null) {
-    // Show the reset button if game data exists.
-    $(".reset-container").removeClass("hide");
+if (localStorage.getItem("storyPath") == null) {
+    // Hide the reset button if no game data exists.
+    $(".reset-container").hide();
 }

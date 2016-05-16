@@ -63,10 +63,6 @@ footer {
   cursor: pointer;
 }
 
-.hide {
-  display: none;
-}
-
 .reset-container {
   position: fixed;
   top: 0;
