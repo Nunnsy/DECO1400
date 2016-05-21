@@ -1,3 +1,4 @@
+/* Specify styling for each article of feedback */
 article {
   width: 760px;
   margin: 0 0 20px 0;
@@ -5,62 +6,75 @@ article {
   overflow: auto;
 }
 
+/* No margin on the last as no article exists after it */
 article:last-of-type {
   margin: 0;
 }
 
+/* To style two dividers side by side, we float them left and change their display to inline */
 article > div {
   float: left;
   display: inline-block;
 }
 
+/* Ensure elements are not being floated within the aforementioned dividers */
 article > div * {
   float: none;
 }
 
+/* Style the user information divider - set the width exact as we are floating inline elements */
 .user-info {
   width: 200px;
   text-align: center;
   font-weight: bold;
 }
 
+/* Ensure block elements within the user divider have whitespace */
 .user-info * {
   margin-top: 10px;
 }
 
+/* If the feedback message is not long enough, this style ensures the last element in user information still has appropriate whitespace */
 .user-info *:last-child {
   margin-bottom: 10px;
 }
 
+/* Style the user feedback divider - set the width exact as we are floating inline elements */
 .user-feedback {
   width: 550px;
   margin: 5px;
 }
 
+/* Give the form some whitespace */
 form {
   margin: 10px;
 }
 
+/* For dividers in the form, give whitespace and automatically adjust to overflow (required for jQuery animation) */
 form div {
   display: block;
   overflow: auto;
   margin: 5px 0;
 }
 
+/* Expand to parent width and extend only to border-box sizing, otherwise a scroll bar will appear */
 textarea {
   width: 100%;
   box-sizing: border-box;
 }
 
+/* Change the default background colour to no stark white is seen */
 input, textarea {
   background-color: #dddddd;
 }
 
+/* For the submit button, float it right so it appears in the bottom right of the form */
 input[type="submit"] {
   float: right;
   width: 200px;
 }
 
+/* If an error occurs in form input, append this class to change the label colour */
 .error {
   color: #c34040;
 }

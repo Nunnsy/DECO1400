@@ -1,3 +1,4 @@
+/* Float the image right, add whitespace, set a suitable width and add a border with colour pertaining to that of the theme */
 img {
   float:right;
   width: 300px;

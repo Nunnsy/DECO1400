@@ -25,11 +25,13 @@ article:last-of-type {
   padding: 20px 20px;
 }
 
+/* For messages, the text is slightly larger with more padding */
 .message {
   font-size: 2em;
   padding: 40px 40px;
 }
 
+/* When the loading ellipsis appears, slight padding is required */
 .load {
   padding: 20px 20px;
 }
@@ -39,7 +41,7 @@ article:last-of-type {
   text-align: center;
 }
 
-
+/* Use a different display technique for choices to appear side by side */
 .choice {
   display: table;
   border-spacing: 20px 0;
@@ -77,6 +79,7 @@ article:last-of-type {
   cursor: default;
 }
 
+/* Custom link styling for the 'Return Home' option */
 .end a, .end a:link, .end a:visited {
   color: #5b0101;
   font-size: 1.5em;
@@ -86,6 +89,7 @@ article:last-of-type {
   color: #8b3a3a;
 }
 
+/* Specify the CSS3 animation for the loading dots */
 .dots {
   -webkit-animation: ellipsis 2s infinite;
   -moz-animation: ellipsis 2s infinite;
@@ -94,13 +98,6 @@ article:last-of-type {
   width: 0px;
   overflow: hidden;
   display: inline-block;
-}
-
-.home-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 30px 40px;
 }
 
 @keyframes ellipsis {
@@ -127,6 +124,16 @@ article:last-of-type {
   }
 }
 
+
+/* Position a home link in the top right of the screen */
+.home-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 30px 40px;
+}
+
+/* Hide all audio controls so that it will play in the background without showing an interface */
 audio {
   display: none;
 }

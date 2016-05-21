@@ -1,15 +1,14 @@
+/* Alter header size for container display */
 h2 {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
+/* Align all page text to the center */
 p {
-  text-align: center;
+    text-align: center;
 }
 
-/*
-Container is used to center the jumbotron vertically and horizontally using
-CSS3 properties.
-*/
+/* Container is used to center the jumbotron vertically and horizontally using CSS3 properties */
 .content {
     display: flex;
     justify-content: center;
@@ -17,16 +16,6 @@ CSS3 properties.
     width: 100%;
     height: 100%;
     padding: 0;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  width: 100%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .jumbotron {
@@ -39,33 +28,40 @@ footer {
 }
 
 .begin-button {
-  font-size: 1.5em;
-
-  display: block;
-  margin: 30px auto;
-
-  width: 500px;
-  height: 100px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 3px solid #322a1a;
-  border-radius: 20px;
+    font-size: 1.5em;
+    display: block;
+    margin: 30px auto;
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #322a1a;
+    border-radius: 20px;
 }
 
 .begin-button:hover {
-  border: 3px solid #6b5012;
+    border: 3px solid #6b5012;
 }
 
+/* Fix the footer to the bottom of the screen */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Position the reset button to the top right of the screen and use a 'link' cursor */
 .reset-button {
-  cursor: pointer;
+    cursor: pointer;
 }
-
 .reset-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 30px 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 30px 40px;
 }

@@ -6,9 +6,7 @@ font-family: 'Architects Daughter', cursive;
 */
 
 
-/*
-Needed for the centering of content and ensuring no browser whitespace is added.
-*/
+/* Needed for the centering of content and ensuring no browser whitespace is added */
 html, body {
     width: 100%;
     height: 100%;
@@ -112,22 +110,20 @@ nav ul li {
 h1 {
   font-family: 'Rock Salt', cursive;
   font-size: 2em;
+  text-align: center;
 }
 
+/* Specify new size for level 2 headings */
 h2 {
   font-size: 1.8em;
 }
 
-h1 {
-  text-align: center;
-}
-
+/* All paragraph text is justified */
 p {
   text-align: justify;
 }
 
 /* Default link styling */
-
 a, a:link, a:visited {
   text-decoration: none;
   color: #866418;
