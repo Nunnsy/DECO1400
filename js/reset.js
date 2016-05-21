@@ -2,9 +2,9 @@
 var confirm_shown = false;
 
 $(document).ready(function() {
-  $(".reset-button").click(function() {
-    resetGame();
-  });
+    $(".reset-button").click(function() {
+        resetGame();
+    });
 });
 
 // The function called when the reset button is pressed.
@@ -16,10 +16,12 @@ function resetGame() {
     } else {
         // Change the reset button text to a confirmation queue for the user.
         $(".reset-container").fadeOut(200, function() {
-          // Gracefully swap the text.
-          $(".reset-button").text("Are you sure?");
-          $(".reset-container").fadeIn(200);
+            // Gracefully swap the text.
+            $(".reset-button").text("Are you sure?");
+            $(".reset-container").fadeIn(200);
         });
+
+        // Change the variable to signify the user is about to confirm.
         confirm_shown = true;
     }
 }
@@ -37,8 +39,8 @@ function confirmReset() {
 
     // Gracefully remove the reset button from view.
     $(".reset-container").fadeOut(1000, function() {
-      // Remove the button completely after animation finishes.
-      $(this).remove();
+        // Remove the button completely after animation finishes.
+        $(this).remove();
     });
 }
 
