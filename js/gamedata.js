@@ -140,7 +140,7 @@ var GAME_DATA_JSON = [
         "id": "CheckOrRest",
         "type": "choice",
         "choice": [{
-            "text": "Better check your sorrundings.",
+            "text": "Better check your surroundings.",
             "target": "TryGetUp"
         }, {
             "text": "Why don't you stay and tell me what happened?",
@@ -698,7 +698,7 @@ var GAME_DATA_JSON = [
         "id": "GoFindItMightBeTooWet",
         "type": "choice",
         "choice": [{
-            "text": "Nevermind. Just go find it.",
+            "text": "Never mind. Just go find it.",
             "target": "GatherTinder"
         }, {
             "text": "It might be too wet.",
