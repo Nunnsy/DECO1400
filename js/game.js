@@ -72,9 +72,6 @@ function addToPath(id, choiceNumber) {
 
     // Put the updated game path into local storage.
     localStorage.setItem("storyPath", JSON.stringify(gamePath));
-
-    // For debug purposes.
-    console.log(gamePath);
 }
 
 // Returns the data with the specified identifier.
@@ -104,13 +101,9 @@ function lockStory(seconds) {
     // Note the date object handles time down to milliseconds.
     // First declare the unlock date as the current date.
     var unlockDate = getCurrentDate();
-    // Logs the current date.
-    console.log(unlockDate);
 
     // Sets the current date "seconds" seconds further into the future.
     unlockDate.setSeconds(unlockDate.getSeconds() + parseInt(seconds));
-    // Logs the unlock date of the story.
-    console.log(unlockDate);
 
     // Add this unlock date to the local storage in case the user leaves.
     localStorage.setItem("storyUnlock", unlockDate);
@@ -145,6 +138,7 @@ function addData(id, live, choice) {
         default:
             // In case there is unexpected data, log this error so we can trace it.
             console.error("Unexpected data type: \"" + data.type + "\" at ID: " + data.id);
+            break;
     }
 }
 
@@ -295,8 +289,6 @@ function buttonChosen(container, otherId) {
 function loadPath() {
     // Load and parse the stored path array (in JSON format) from local storage into the current game path array.
     gamePath = JSON.parse(localStorage.getItem("storyPath"));
-    // Log the stored game path.
-    console.log(gamePath);
 
     // Declare a variable outside the loop to retain the last identifer in the loaded game path.
     var lastId = null;
@@ -363,7 +355,8 @@ $(document).ready(function() {
     // Check to see if we were waiting for Brian to respond.
     if (localStorage.getItem("storyUnlock") != null) {
         // Set the unlock date to what is stored in the local storage.
-        unlockDate = Date.parse(localStorage.getItem("storyUnlock"));
+        var unlockDate = new Date(localStorage.getItem("storyUnlock"));
+        //var unlockDate = Date.parse(localStorage.getItem("storyUnlock"));
         // Get the current date.
         var dateNow = getCurrentDate();
 
@@ -373,7 +366,7 @@ $(document).ready(function() {
             continueStory();
         } else {
             // If not, lock the story till that time.
-            lockStory(dateNow.getMinutes() - unlockDate.getMinutes());
+            lockStory(dateNow.getSeconds() - unlockDate.getSeconds());
         }
     }
 });
