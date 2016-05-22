@@ -1,9 +1,5 @@
-/*
-Force a scroll bar for later no page adjustment when lots of content becomes
-visible. Also ensure the darkbg left adjustments don't create x scroll bars.
-*/
+/* Force a scroll bar for later no page adjustment when lots of content becomes visible */
 body {
-  overflow-x: hidden;
   overflow-y: scroll;
 }
 

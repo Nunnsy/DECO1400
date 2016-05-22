@@ -1,0 +1,28 @@
+/* Define a static width and add some spacing - width different because no inside container in article compared to game */
+article {
+    width: 720px;
+    margin: 0 0 20px 0;
+    background-image: url("../images/paper.png");
+    color: #222222;
+    font-size: 1.4em;
+    padding: 20px 20px;
+}
+
+article:last-of-type {
+    margin: 0;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Custom link styling for the 'Return Home' option */
+article a, article a:link, article a:visited {
+    color: #5b0101;
+    font-size: 1.5em;
+}
+
+article a:hover, article a:active, article a:focus {
+    color: #8b3a3a;
+}
